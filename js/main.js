@@ -36,9 +36,17 @@ const typedHome = new Typed('#home__typed', {
     cursorChar: '_', 
 });
       // add shadow header
-
+const shadowHeader = ()=> {
+    const header = document.getElementById("header")
+    // add a class if the button offset is greater than 50 of the viewport
+    this.scrollY >= 50 ? header.classList.add('shadow-header')
+                       : header.classList.remove('shadow-header')     
+}
+window.addEventListener('scroll', shadowHeader)
       // contact email js
 
       // show scroll up
 
       // scroll selection active link 
+
+      // scroll reveal animation
