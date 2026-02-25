@@ -43,8 +43,38 @@ const shadowHeader = ()=> {
                        : header.classList.remove('shadow-header')     
 }
 window.addEventListener('scroll', shadowHeader)
-      // contact email js
 
+// EmailJS initialization (ADD THIS ONCE)
+emailjs.init('hN5HAIFiM2Jd1U2tw');
+
+      // contact email js
+const contactForm = document.getElementById('contact__form'),
+      contactMessage = document.getElementById('contact__message')
+
+const sendEmail = (e) => {
+  e.preventDefault()
+
+  emailjs.sendForm(
+    'service_no8txgr',
+    'template_0ficz0f',
+    '#contact__form'
+  )
+  .then(() => {
+    contactMessage.textContent = 'Message sent successfully ✅'
+    contactForm.reset()
+
+    setTimeout(() => {
+      contactMessage.textContent = ''
+    }, 5000)
+  })
+  .catch((error) => {
+    contactMessage.textContent = 'Message not sent ❌'
+    console.error(error)
+  })
+}
+
+contactForm.addEventListener('submit', sendEmail)
+contactForm.addEventListener('submit', sendEmail)   
       // show scroll up
 
       // scroll selection active link 
