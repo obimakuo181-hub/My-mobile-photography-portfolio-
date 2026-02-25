@@ -74,9 +74,101 @@ const sendEmail = (e) => {
 }
 
 contactForm.addEventListener('submit', sendEmail)
-contactForm.addEventListener('submit', sendEmail)   
+ 
       // show scroll up
 
       // scroll selection active link 
 
       // scroll reveal animation
+
+//     Animation JS  
+
+// ---- THREE.JS 3D CAMERA SETUP ----
+
+// 1. Container
+const container = document.getElementById('camera3d');
+
+// 2. Scene
+const scene = new THREE.Scene();
+
+// 3. Camera
+const camera = new THREE.PerspectiveCamera(
+  75,
+  container.clientWidth / container.clientHeight,
+  0.1,
+  1000
+);
+camera.position.set(0, 1, 5);
+
+// 4. Renderer
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(container.clientWidth, container.clientHeight);
+renderer.setPixelRatio(window.devicePixelRatio);
+container.appendChild(renderer.domElement);
+
+// 5. Lights
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+scene.add(ambientLight);
+
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+directionalLight.position.set(5, 5, 5);
+scene.add(directionalLight);
+
+// 6. Load the 3D camera model
+const loader = new THREE.GLTFLoader();
+let cameraModel;
+
+loader.load(
+  '/assets/models/camera.glb', // ⚡ Path must match your project structure
+  function (gltf) {
+    cameraModel = gltf.scene;
+    cameraModel.scale.set(30,30, 30); // Adjust size
+    scene.add(cameraModel);
+    console.log('MODEL LOADED ✅');
+  },
+  undefined,
+  function (error) {
+    console.error('MODEL LOAD ERROR ❌', error);
+  }
+);
+
+// 7. Mouse tracking
+let mouseX = 0;
+let mouseY = 0;
+document.addEventListener('mousemove', (event) => {
+  mouseX = (event.clientX / window.innerWidth - 0.5) * 2;
+  mouseY = (event.clientY / window.innerHeight - 0.5) * 2;
+});
+
+// 8. Animate
+function animate() {
+  requestAnimationFrame(animate);
+
+  if (cameraModel) {
+
+    const time = Date.now() * 0.001;
+
+    // 🌊 Floating effect (smooth hover)
+    cameraModel.position.y = Math.sin(time) * 0.25;
+
+    // 🔄 Slow automatic rotation (showcase mode)
+    cameraModel.rotation.y += 0.003;
+
+    // 🎯 Smooth mouse follow (blended with auto rotation)
+    cameraModel.rotation.y += (mouseX * 0.5 - cameraModel.rotation.y) * 0.03;
+    cameraModel.rotation.x += (-mouseY * 0.3 - cameraModel.rotation.x) * 0.03;
+
+    // 🎬 Subtle natural tilt
+    cameraModel.rotation.z = Math.sin(time * 0.5) * 0.03;
+  }
+
+  renderer.render(scene, camera);
+}
+animate();
+
+// 9. Handle window resize
+window.addEventListener('resize', () => {
+  camera.aspect = container.clientWidth / container.clientHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(container.clientWidth, container.clientHeight);
+});

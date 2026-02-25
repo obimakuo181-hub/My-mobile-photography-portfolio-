@@ -39,8 +39,17 @@ body {
 
   --z-tooltip: 10;
   --z-fixed: 100;
-}     
+}   
 
+
+        /* ANIMATION CSS */
+#camera3d {
+  width: 100%;
+  max-width: 1120px;   /* match your container */
+  height: 500px;
+  margin: 3rem auto;    /* center it with spacing */
+  position: relative;
+}
       /* responsive typography */
 @media screen and (min-width: 1150px){
   :root {
@@ -102,9 +111,10 @@ img{
 }
         /* reusable css classes */
 
-  .container{
+.container{
   max-width: 1120px;
-  margin-inline: 1.5rem;
+  margin: 0 auto;        /* centers perfectly */
+  padding-inline: 1.5rem; /* keeps side spacing */
 }
 
 .grid{
