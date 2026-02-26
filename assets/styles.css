@@ -115,7 +115,7 @@ img{
   max-width: 1120px;
   margin: 0 auto;        /* centers perfectly */
   padding-inline: 1.5rem; /* keeps side spacing */
-}
+} 
 
 .grid{
   display: grid;
@@ -581,7 +581,67 @@ padding-block: 5rem 1rem;
   color: var(--first-color);
 }
         /* footer */
+.footer{
+  padding-block: 5rem 2rem;
+}
 
+.footer__conatiner{
+  row-gap: 2rem;
+}
+
+.footer__links,
+.footer__social{
+  display: flex;
+  justify-content: center;
+}
+
+.footer__logo{
+  color: var(--white-color);
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  justify-self: center;
+  margin-bottom: 1rem;
+  transition: color .4s;
+}
+
+.footer__logo:hover{
+  color: var(--first-color);
+}
+
+.footer__links{
+  column-gap: 2rem;
+}
+
+.footer__link{
+  color: var(--white-color);
+  transition: color .4s;
+}
+
+.footer__link:hover{
+  color: var(--first-color);
+}
+
+.footer__social{
+  column-gap: 1.5rem;
+}
+
+.footer__social-link{
+  color: var(--first-color);
+  font-size: 1.5rem;
+  transition: transform .4s;
+}
+
+.footer__social-link:hover{
+  transform: translateY(-.25rem);
+}
+
+.footer__copy{
+  display: block;
+  margin-top: 5rem;
+  text-align: center;
+  font-size: var(--small-font-size);
+  color: var(--grey-color);
+}
         /* scroll bar */
 
         /* scroll up */
@@ -620,7 +680,8 @@ padding-block: 5rem 1rem;
   .home__container,
   .about__container,
   .projects__container,
-  .resume__container{
+  .resume__container,
+  .contact__container{
     grid-template-columns: 400px;
     justify-content: center;
   }
@@ -642,8 +703,16 @@ padding-block: 5rem 1rem;
   }
 
   .projects__container,
-  .resume__container{
+  .resume__container,
+  .contact__container{
     grid-template-columns: repeat(2, 350px);
+  }
+
+  .contact__content{
+    align-content: flex-start;
+  }
+  .contact__form{
+    order: 1;
   }
 }
 
@@ -740,6 +809,43 @@ padding-block: 5rem 1rem;
   }
   .resume__list{
     row-gap: 3rem;
+  }
+
+  .contact{
+    padding-block: 8rem 4rem;
+  }
+  .contact__container{
+    grid-template-columns: 310px 450px;
+    column-gap: 10rem;
+  }
+  .contact__content{
+    row-gap: 2rem;
+  }
+  .contact__data{
+    row-gap: 1.5rem;
+  }
+  .contact__form .button{
+    justify-self: center;
+    margin-top: 1rem;
+  }
+  .contact__area{
+    height: 14rem;
+  }
+
+  .footer__container{
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+  .footer__logo{
+    font-size: var(--h2-font-size);
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+  .footer__links{
+    column-gap: 3rem;
+  }
+  .footer__social{
+    justify-content: flex-end;
   }
 }
 
