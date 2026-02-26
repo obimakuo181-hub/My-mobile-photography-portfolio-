@@ -76,10 +76,54 @@ const sendEmail = (e) => {
 contactForm.addEventListener('submit', sendEmail)
  
       // show scroll up
+const scrollUp = () => {
+      const scrollUp = document.getElementById('scroll-up')
+      // when the scroll is higher than 350 vieport height, add the show-scroll class to the page.
+      this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
+      : scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
 
-      // scroll selection active link 
+   
+// Scroll selection active link
+const sections = document.querySelectorAll('section[id]')
 
+const scrollActive = () => {
+   const scrollDown = window.scrollY
+
+   sections.forEach(current => {
+      const sectionHeight = current.offsetHeight,
+            sectionTop = current.offsetTop - 58,
+            sectionId = current.getAttribute('id'),
+            sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+
+      if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
+         sectionsClass.classList.add('active-link')
+      } else {
+         sectionsClass.classList.remove('active-link')
+      }
+   })
+}
+
+window.addEventListener('scroll', scrollActive)   
       // scroll reveal animation
+const sr = ScrollReveal({
+   origin: 'top',
+   distance: '60px',
+   duration: 2500,
+   delay: 400,
+   reset: false
+})
+
+sr.reveal(`.home__content, .resume__content:nth-child(1), .footer__container`)
+sr.reveal(`.home__data, .resume__content:nth-child(2)`, { delay: 500, origin: 'bottom' })
+sr.reveal('.home__social', { origin: 'left' })
+sr.reveal('.home__image', { origin: 'right' })
+
+sr.reveal('.about__content, .contact__content', { origin: 'bottom' })
+sr.reveal('.about__image, .contact__form', { delay: '300' })
+
+sr.reveal('.projects__card', { interval: '100' })
 
 //     Animation JS  
 
