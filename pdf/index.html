@@ -179,7 +179,10 @@
                   <p class="projects__description">
                     Street photography
                   </p>
-                  <a href="#" target="_blank" class="button  button__ghost">View picture</a>
+                  <button class="button view-project" 
+                    data-images="../assets/images_portfolio/street ielts (2).jpg,../assets/images_portfolio/street ielts.jpg,../assets/images_portfolio/street ielts 3.jpg,../assets/images_portfolio/birthday street pic.jpg,../assets/images_portfolio/street perfect unknown.jpg,../assets/images_portfolio/street standing ielts.jpg,../assets/images_portfolio/street festing.jpg,../assets/images_portfolio/smart street.jpg">
+                    View Pictures
+                  </button>
                 
               </div>
             </article>
@@ -191,19 +194,10 @@
                   <p class="projects__description">
                     Kids photography
                   </p>
-                  <a href="#" target="_blank" class="button  button__ghost">View picture</a>
-                
-              </div>
-            </article>
-
-            <article class="projects__card">
-              <img src="../assets/images_portfolio/birthday olu.jpg" alt="image" class="projects__img">
-              <div class="projects__data">
-                <h3 class="projects__title">Kids pic</h3>
-                  <p class="projects__description">
-                   Kids photography
-                  </p>
-                  <a href="#" target="_blank" class="button  button__ghost">View picture</a>
+                  <button class="button view-project" 
+                  data-images="../assets/images_portfolio/birthday olu.jpg,../assets/images_portfolio/birthday olu (2).jpg,../assets/images_portfolio/olu.jpg,../assets/images_portfolio/oluu.jpg">
+                  View pictures
+                </button>
                 
               </div>
             </article>
@@ -215,7 +209,10 @@
                   <p class="projects__description">
                     Outdoor photography
                   </p>
-                  <a href="#" target="_blank" class="button  button__ghost">View picture</a>
+                  <button class="button view-project" 
+                data-images="../assets/images_portfolio/outdoor best skypark.jpg,../assets/images_portfolio/outdoor pic amigo (2).jpg,../assets/images_portfolio/outdoor pic amigo.jpg,../assets/images_portfolio/outdoor sitting pic amigo.jpg,../assets/images_portfolio/couple pic amigo.jpg,../assets/images_portfolio/outdoor shoprite.jpg,../assets/images_portfolio/outdoor amigo standing.jpg,../assets/images_portfolio/demur skypark.jpg,../assets/images_portfolio/outdoor me shoprite.jpg,../assets/images_portfolio/outdoor me skypark.jpg">
+                View pictures
+              </button>
                 
               </div>
             </article>
@@ -227,19 +224,40 @@
                   <p class="projects__description">
                    Indoor photography
                   </p>
-                  <a href="#" target="_blank" class="button  button__ghost">View picture</a>
+                  <button class="button view-project" 
+                data-images="../assets/images_portfolio/indoor patoosh.jpg,../assets/images_portfolio/indoor pic at amigo.jpg,../assets/images_portfolio/indoor amigo.jpg,../assets/images_portfolio/indoor amigo nice.jpg">
+                View pictures
+              </button>
                 
               </div>
             </article>
             
             <article class="projects__card">
-              <img src="../assets/images_portfolio/street ielts 3.jpg" alt="image" class="projects__img">
+              <img src="../assets/images_portfolio/sunday vibes dont play.jpg" alt="image" class="projects__img">
               <div class="projects__data">
-                <h3 class="projects__title">Street pic</h3>
+                <h3 class="projects__title">Sunday Vibes</h3>
                   <p class="projects__description">
-                    Street photography
+                    Casual photography
                   </p>
-                  <a href="#" target="_blank" class="button  button__ghost">View picture</a>
+                  <button class="button view-project" 
+                data-images="../assets/images_portfolio/Sunday pic at ourlady.jpg,../assets/images_portfolio/sundayvibes kel.jpg,../assets/images_portfolio/sunday vibes dont play.jpg,../assets/images_portfolio/sunday vibes abuchi.jpg">
+                View pictures
+              </button>
+                
+              </div>
+            </article>
+
+            <article class="projects__card">
+              <img src="../assets/images_portfolio/thirills 1.jpg" alt="image" class="projects__img">
+              <div class="projects__data">
+                <h3 class="projects__title">Thrills</h3>
+                  <p class="projects__description">
+                    Casual photography
+                  </p>
+                  <button class="button view-project" 
+                data-images="../assets/images_portfolio/thirills 1.jpg,../assets/images_portfolio/thrills 2.jpg,../assets/images_portfolio/thrills 3.jpg">
+                View pictures
+              </button>
                 
               </div>
             </article>
@@ -375,6 +393,18 @@
     <a href="#" class="scrollup" id="scroll-up">
       <i class="fa-solid fa-arrow-up"></i>
     </a>
+
+          <!-- NEW SETUP -->
+    <!-- PROJECT MODAL -->
+    <div class="project-modal" id="projectModal">
+      <div class="project-modal__content">
+        <span class="project-modal__close" id="modalClose">&times;</span>
+
+        <div class="project-modal__images" id="modalImages">
+          <!-- Images will be inserted dynamically -->
+        </div>
+      </div>
+    </div>       
 
                  <!-- scrollreveal -->
     <script src="https://unpkg.com/scrollreveal"></script>

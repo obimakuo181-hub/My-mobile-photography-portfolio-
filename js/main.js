@@ -125,6 +125,43 @@ sr.reveal('.about__image, .contact__form', { delay: '300' })
 
 sr.reveal('.projects__card', { interval: '100' })
 
+                  // NEW SETUP
+const modal = document.getElementById('projectModal')
+const modalImages = document.getElementById('modalImages')
+const modalClose = document.getElementById('modalClose')
+
+const viewButtons = document.querySelectorAll('.view-project')
+
+viewButtons.forEach(button => {
+  button.addEventListener('click', () => {
+
+    // Clear old images
+    modalImages.innerHTML = ''
+
+    // Get image list
+    const images = button.dataset.images.split(',')
+
+    images.forEach(src => {
+      const img = document.createElement('img')
+      img.src = src.trim()
+      modalImages.appendChild(img)
+    })
+
+    modal.classList.add('active')
+  })
+})
+
+modalClose.addEventListener('click', () => {
+  modal.classList.remove('active')
+})
+
+// Close when clicking outside
+modal.addEventListener('click', (e) => {
+  if(e.target === modal){
+    modal.classList.remove('active')
+  }
+})                  
+
 //     Animation JS  
 
 // ---- THREE.JS 3D CAMERA SETUP ----
