@@ -123,7 +123,7 @@ img{
 }
 
 .section{
-padding-block: 5rem 1rem;
+  padding-block: 7rem 2rem;
 }
 
 .section__title{
@@ -314,6 +314,7 @@ padding-block: 5rem 1rem;
 .home__container{
   row-gap: 4rem;
   padding-block: 2.5rem 2rem;
+
 } 
 
 .home__content{
@@ -324,21 +325,21 @@ padding-block: 5rem 1rem;
 
 .home__image{
   width: 240px;
-  height: 240px;
+  height: 270px;
   background-color: var(--white-color);
   border-radius: 50%;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  align-items: center;     /* FIXED */
+  justify-content: center; /* FIXED */
   border: 5px solid var(--first-color);
   box-shadow: 0 8px 32px hsla(var(--hue), 80%, 48%, .3);
 }
-
 .home__img{
-  width: 200px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* VERY IMPORTANT */
   filter: drop-shadow(0 4px 16px hsla(0, 0%, 0%, .2));
-  
 }
 
 .home__social{
@@ -555,7 +556,9 @@ padding-block: 5rem 1rem;
 
 .projects__card:hover{
   box-shadow: 0 8px 16px hsl(var(--hue), 80%, 48%, .2);
-}    
+} 
+
+
 
         /* resume */
 .resume__container{
@@ -866,13 +869,15 @@ padding-block: 5rem 1rem;
   }
 
   .home__image{
-    width: 400px;
-    height: 400px;
+    width: 320px;
+    height: 380px;
     border-width: 8px;
   }
   .home__img{
-    width: 340px;
-  }
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
   .home__social{
     left: -4rem;
   }
@@ -897,13 +902,15 @@ padding-block: 5rem 1rem;
     margin-bottom: 1.5rem;
   }
   .about__image{
-    width: 400px;
-    height: 400px;
+    width: 320px;
+    height: 380px;
     border-radius: 1.5rem;
   }
-  .about__img{
-    width: 350px;
-  }
+ .about__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
   .projects{
     padding-block: 8rem 4rem;
@@ -969,6 +976,25 @@ padding-block: 5rem 1rem;
   .scrollup{
     right: 3rem;
   }
+}
+
+#about{
+  padding-top: 3rem;
+}
+#home{
+  padding-top: 2.5rem
+}
+section {
+  scroll-margin-top: 2.5rem;
+}
+.projects__card{
+  display: flex;
+}
+
+.projects__card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* for 2k resolution (2048 * 1152, 2048 * 1536) */
