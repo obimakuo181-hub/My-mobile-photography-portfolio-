@@ -200,7 +200,7 @@ const loader = new THREE.GLTFLoader();
 let cameraModel;
 
 loader.load(
-  '/assets/models/camera.glb', // ⚡ Path must match your project structure
+  '../assetss/models/camera.glb', // ⚡ Path must match your project structure
   function (gltf) {
     cameraModel = gltf.scene;
     cameraModel.scale.set(30,30, 30); // Adjust size

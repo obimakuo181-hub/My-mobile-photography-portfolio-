@@ -636,9 +636,9 @@ img{
   cursor: pointer;
 }
 .contact__message{
-  position: absolute;
-  bottom: -2rem;
+  margin-top: .75rem;
   font-size: var(--small-font-size);
+  text-align: center;
 }
 .contact__data{
   row-gap: 1rem;
