@@ -45,10 +45,9 @@ body {
         /* ANIMATION CSS */
 #camera3d {
   width: 100%;
-  max-width: 1120px;   /* match your container */
-  height: 500px;
-  margin: 3rem auto;    /* center it with spacing */
+  height: 100%;
   position: relative;
+  padding-top: 40px;
 }
       /* responsive typography */
 @media screen and (min-width: 1150px){
@@ -326,14 +325,18 @@ img{
 .home__image{
   width: 240px;
   height: 270px;
-  background-color: var(--white-color);
+  background-color: transparent;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
   align-items: center;     /* FIXED */
   justify-content: center; /* FIXED */
   border: 5px solid var(--first-color);
-  box-shadow: 0 8px 32px hsla(var(--hue), 80%, 48%, .3);
+  box-shadow: 0 0 40px hsla(var(--hue), 80%, 48%, .6);
+    position: relative;
+  background: radial-gradient(circle at center, 
+              hsla(var(--hue), 80%, 48%, 0.35) 0%, 
+              transparent 70%);
 }
 .home__img{
   width: 100%;

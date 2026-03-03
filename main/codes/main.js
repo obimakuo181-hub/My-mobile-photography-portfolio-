@@ -179,7 +179,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 );
-camera.position.set(0, 1, 5);
+camera.position.set(0, 0, 6);
 
 // 4. Renderer
 const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -203,7 +203,7 @@ loader.load(
   '../assetss/models/camera.glb', // ⚡ Path must match your project structure
   function (gltf) {
     cameraModel = gltf.scene;
-    cameraModel.scale.set(30,30, 30); // Adjust size
+  cameraModel.scale.set(35, 35, 35);   // Adjust size
     scene.add(cameraModel);
     console.log('MODEL LOADED ✅');
   },
@@ -237,7 +237,7 @@ function animate() {
 
     // 🎯 Smooth mouse follow (blended with auto rotation)
     cameraModel.rotation.y += (mouseX * 0.5 - cameraModel.rotation.y) * 0.03;
-    cameraModel.rotation.x += (-mouseY * 0.3 - cameraModel.rotation.x) * 0.03;
+    cameraModel.rotation.x += (mouseY * 0.3 - cameraModel.rotation.x) * 0.03;
 
     // 🎬 Subtle natural tilt
     cameraModel.rotation.z = Math.sin(time * 0.5) * 0.03;
